@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "FloorButton",
+"language": "GDScript",
+"path": "res://Objects/Button.gd"
+} ]
+_global_script_class_icons={
+"FloorButton": ""
+}
+
 [application]
 
 config/name="GMTK-jam-2021"
