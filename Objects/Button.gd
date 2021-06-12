@@ -18,16 +18,17 @@ func _on_body_entered(body):
 		match type:
 			Types.toggled:
 				if on:
+					on = not on
 					emit_signal("turned_off", body)
 				else:
+					on = not on
 					emit_signal("turned_on", body)
-				on = not on
 			Types.held:
-				emit_signal("turned_on", body)
 				on = true
+				emit_signal("turned_on", body)
 			Types.once:
-				emit_signal("turned_on", body)
 				on = true
+				emit_signal("turned_on", body)
 
 
 func _on_body_exited(body):
@@ -36,7 +37,7 @@ func _on_body_exited(body):
 			Types.toggled:
 				pass
 			Types.held:
-				emit_signal("turned_off", body)
 				on = false
+				emit_signal("turned_off", body)
 			Types.once:
 				pass

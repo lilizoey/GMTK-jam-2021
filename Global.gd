@@ -28,11 +28,13 @@ class StageState:
 var main_stages := [
 	"stage_1",
 	"stage_2",
+	"stage_3"
 ]
 
 var stages := {
 	main_stages[0] : StageState.new(preload("res://Stages/Stage1.tscn"), main_stages[0], preload("res://Misc/theme3.ogg"), State.unlocked),
-	main_stages[1] : StageState.new(preload("res://Stages/Stage2.tscn"), main_stages[1], preload("res://Misc/theme3.ogg"))
+	main_stages[1] : StageState.new(preload("res://Stages/Stage2.tscn"), main_stages[1], preload("res://Misc/theme3.ogg")),
+	main_stages[2] : StageState.new(preload("res://Stages/Stage3.tscn"), main_stages[2], preload("res://Misc/theme3.ogg"))
 }
 
 func _ready():
