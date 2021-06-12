@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Character/Player/PlayerOne.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Character/Player/PlayerTwo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Character/Player/Players.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36, 3 )
+
+[node name="RodPlayers" type="Node2D" groups=[
+"Player",
+]]
+script = ExtResource( 4 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+scale = Vector2( 1.125, 0.094 )
+texture = ExtResource( 3 )
+
+[node name="PlayerOne" parent="." instance=ExtResource( 1 )]
+position = Vector2( -36, 0 )
+other_path = NodePath("../PlayerTwo")
+
+[node name="PlayerTwo" parent="." instance=ExtResource( 2 )]
+position = Vector2( 36, 0 )
+other_path = NodePath("../PlayerOne")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( -36, 0 )
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../PlayerOne")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2( 36, 0 )
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../PlayerTwo")
