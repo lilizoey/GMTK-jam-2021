@@ -5,4 +5,4 @@ func set_length(val: int):
 	shape.height = val
 	shape.radius = 2
 	$CollisionShape2D.shape = shape
-	$Sprite.region_rect.size.y = val
+	$Sprite.region_rect.size.y = val + 4

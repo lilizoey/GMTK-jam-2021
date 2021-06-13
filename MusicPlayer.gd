@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const target_volume := -7.5
+const target_volume := -18.5
 const min_volume := -35
 const fade_speed := 20
 

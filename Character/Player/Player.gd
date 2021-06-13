@@ -18,6 +18,7 @@ func _ready():
 
 func _integrate_forces(state: Physics2DDirectBodyState):
 	if Global.paused:
+		state.set_linear_velocity(Vector2.ZERO)
 		return
 	
 	var lv := state.get_linear_velocity()
