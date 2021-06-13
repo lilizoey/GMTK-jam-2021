@@ -26,6 +26,7 @@ func play_song(new_song: AudioStream):
 	next_song = new_song
 	playing_state = PlayingState.fade_out
 
+
 func _process(delta):
 	match playing_state:
 		PlayingState.playing:

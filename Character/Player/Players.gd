@@ -17,6 +17,8 @@ onready var camera2d := get_node_or_null("Camera2D")
 onready var players_on_ground := {player_1: true, player_2: true}
 
 onready var initial_pos: Vector2 = player_1.global_position
+onready var death_sound:= AudioStreamPlayer.new()
+
 var initialized := false
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +28,10 @@ func _ready():
 			child.connect("fell_off", self, "_on_player_fell_off")
 		if child.has_signal("enter_ground"):
 			child.connect("enter_ground", self, "_on_player_enter_ground")
+	
+	add_child(death_sound)
+	death_sound.stream = preload("res://Character/Player/youDIE.ogg")
+	death_sound.bus = "SFX"
 
 func _physics_process(delta):
 	if camera2d:
@@ -68,5 +74,7 @@ func die():
 			player.die()
 	
 	for child in get_children():
-		if not child.is_in_group("Player"):
+		if not child.is_in_group("Player") and not child is AudioStreamPlayer:
 			child.visible = false
+	
+	death_sound.play()

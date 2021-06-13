@@ -9,7 +9,6 @@ func init(_stage_name: String):
 	
 	match stage_state.state:
 		Global.State.locked:
-			modulate = Color(0.1, 0.1, 0.1)
 			disabled = true
 		Global.State.unlocked:
 			modulate = Color(1.0, 1.0, 1.0)
