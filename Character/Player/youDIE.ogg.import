@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/youDIE.ogg-0393238ecf84f7f03d42a7a7fc815682.oggstr"
+
+[deps]
+
+source_file="res://Character/Player/youDIE.ogg"
+dest_files=[ "res://.import/youDIE.ogg-0393238ecf84f7f03d42a7a7fc815682.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
