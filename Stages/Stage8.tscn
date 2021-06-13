@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Character/Player/HRodPlayers.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Character/Player/VRodPlayers.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terrain/WallTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Misc/FinishZone.gd" type="Script" id=3]
 [ext_resource path="res://Stages/Stage.gd" type="Script" id=4]
 [ext_resource path="res://UI/StageFinished.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Terrain/FloorTiles.tres" type="TileSet" id=6]
 [ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI/Pause.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Terrain/ExitSign.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Terrain/WatchOutSign.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17, 24.1814 )
@@ -29,55 +32,55 @@ cell_size = Vector2( 24, 24 )
 collision_layer = 2
 collision_mask = 7
 format = 1
-tile_data = PoolIntArray( 0, 1, 1, 1, 1, 196610, 2, 1, 196610, 3, 1, 196610, 4, 1, 196610, 5, 1, 196610, 6, 1, 196610, 7, 1, 196610, 8, 1, 196610, 9, 1, 196610, 10, 1, 196610, 11, 1, 3, 65536, 1, 65536, 65547, 1, 65536, 131072, 1, 65536, 131083, 1, 65536, 196608, 1, 65536, 196619, 1, 65536, 262144, 1, 65536, 262155, 1, 65536, 327680, 1, 65536, 327691, 1, 65536, 393216, 1, 65536, 393227, 1, 131072, 458752, 1, 65536, 524288, 1, 131073, 524289, 1, 196610, 524290, 1, 196610, 524291, 1, 196610, 524292, 1, 196610, 524293, 1, 196610, 524294, 1, 196610, 524295, 1, 196610, 524296, 1, 196610, 524297, 1, 196610, 524298, 1, 196610, 524299, 1, 196611 )
+tile_data = PoolIntArray( 0, 1, 8, 1, 1, 6, 2, 1, 196610, 3, 1, 196610, 4, 1, 196610, 5, 1, 196610, 6, 1, 196610, 7, 1, 196610, 8, 1, 196610, 9, 1, 196610, 10, 1, 196610, 11, 1, 3, 65536, 1, 131076, 65537, 1, 196619, 65547, 1, 65536, 131072, 1, 65536, 131083, 1, 65536, 196608, 1, 65536, 196619, 1, 65536, 262144, 1, 65536, 262155, 1, 65536, 327680, 1, 65536, 327691, 1, 65536, 393216, 1, 65536, 393227, 1, 131072, 458752, 1, 65540, 458753, 1, 11, 524288, 1, 196616, 524289, 1, 196614, 524290, 1, 196610, 524291, 1, 196610, 524292, 1, 196610, 524293, 1, 196610, 524294, 1, 196610, 524295, 1, 196610, 524296, 1, 196610, 524297, 1, 196610, 524298, 1, 196610, 524299, 1, 196611 )
 
 [node name="Button" parent="." instance=ExtResource( 7 )]
-position = Vector2( 132, 120 )
+position = Vector2( 132, 132 )
+type = 2
 
 [node name="Button2" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 24, 0 )
+type = 0
 
 [node name="Button3" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 24, -24 )
+type = 0
 
 [node name="Button4" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 0, -24 )
+type = 0
 
 [node name="Button5" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( -24, -24 )
+type = 0
 
 [node name="Button7" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( -24, -48 )
+type = 0
 
 [node name="Button8" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 0, -48 )
+type = 0
 
 [node name="Button9" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 24, -48 )
+type = 2
 
 [node name="Button10" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 48, -48 )
+type = 0
 
 [node name="Button11" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 48, -24 )
+type = 0
 
 [node name="Button12" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( 48, 0 )
-
-[node name="Button13" parent="Button" instance=ExtResource( 7 )]
-position = Vector2( 48, 24 )
-
-[node name="Button14" parent="Button" instance=ExtResource( 7 )]
-position = Vector2( 24, 24 )
-
-[node name="Button15" parent="Button" instance=ExtResource( 7 )]
-position = Vector2( 0, 24 )
-
-[node name="Button16" parent="Button" instance=ExtResource( 7 )]
-position = Vector2( -24, 24 )
+type = 0
 
 [node name="Button6" parent="Button" instance=ExtResource( 7 )]
 position = Vector2( -24, 0 )
+type = 0
 
 [node name="FinishZone" type="Area2D" parent="."]
 position = Vector2( 253, 204 )
@@ -95,15 +98,48 @@ visible = false
 [node name="Pause" parent="UI" instance=ExtResource( 9 )]
 visible = false
 
-[node name="RodPlayers" parent="." instance=ExtResource( 1 )]
-position = Vector2( 76, 37 )
+[node name="Door" parent="." instance=ExtResource( 8 )]
+position = Vector2( 276, 180 )
+type = 1
+button_paths = [ NodePath("../Button"), NodePath("../Button/Button2"), NodePath("../Button/Button3"), NodePath("../Button/Button4"), NodePath("../Button/Button5"), NodePath("../Button/Button6"), NodePath("../Button/Button7"), NodePath("../Button/Button8"), NodePath("../Button/Button9"), NodePath("../Button/Button10"), NodePath("../Button/Button11"), NodePath("../Button/Button12") ]
 
-[node name="Camera2D" type="Camera2D" parent="RodPlayers"]
+[node name="Door" parent="Door" instance=ExtResource( 8 )]
+position = Vector2( -24, -96 )
+type = 1
+button_paths = [ NodePath("../../Button/Button7"), NodePath("../../Button/Button8"), NodePath("../../Button/Button9"), NodePath("../../Button/Button10") ]
+
+[node name="Door2" parent="Door" instance=ExtResource( 8 )]
+position = Vector2( -24, -72 )
+type = 1
+button_paths = [ NodePath("../../Button/Button5"), NodePath("../../Button/Button4"), NodePath("../../Button/Button3"), NodePath("../../Button/Button11") ]
+
+[node name="Door3" parent="Door" instance=ExtResource( 8 )]
+position = Vector2( -24, -48 )
+type = 1
+button_paths = [ NodePath("../../Button/Button6"), NodePath("../../Button"), NodePath("../../Button/Button2"), NodePath("../../Button/Button12") ]
+
+[node name="RodPlayers" parent="Door" instance=ExtResource( 1 )]
+position = Vector2( -228, -84 )
+
+[node name="Camera2D" type="Camera2D" parent="Door/RodPlayers"]
+position = Vector2( 28, -59 )
 current = true
 limit_left = 0
 limit_top = 0
 limit_right = 288
 limit_bottom = 216
+
+[node name="ExitSign" parent="." instance=ExtResource( 11 )]
+position = Vector2( 252, 108 )
+
+[node name="ExitSign3" parent="ExitSign" instance=ExtResource( 11 )]
+position = Vector2( 0, -24 )
+
+[node name="ExitSign" parent="ExitSign" instance=ExtResource( 11 )]
+position = Vector2( 0, 24 )
+
+[node name="ExitSign2" parent="ExitSign" instance=ExtResource( 10 )]
+position = Vector2( 0, 96 )
 
 [connection signal="both_player_reached" from="FinishZone" to="." method="_on_FinishZone_both_player_reached"]
 [connection signal="player_reached" from="FinishZone" to="." method="_on_FinishZone_player_reached"]
