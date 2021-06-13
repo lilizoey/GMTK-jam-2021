@@ -37,16 +37,6 @@ tile_data = PoolIntArray( 0, 1, 1, 1, 1, 196610, 2, 1, 196610, 3, 1, 196610, 4, 
 position = Vector2( 84, 276 )
 type = 2
 
-[node name="RodPlayers" parent="." instance=ExtResource( 1 )]
-position = Vector2( 143.015, 76.6427 )
-
-[node name="Camera2D" type="Camera2D" parent="RodPlayers"]
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 288
-limit_bottom = 456
-
 [node name="FinishZone" type="Area2D" parent="."]
 position = Vector2( 253, 204 )
 script = ExtResource( 3 )
@@ -76,6 +66,16 @@ position = Vector2( 108, 420 )
 
 [node name="ExitSign" parent="ExitSign" instance=ExtResource( 10 )]
 position = Vector2( 72, 0 )
+
+[node name="RodPlayers" parent="ExitSign" instance=ExtResource( 1 )]
+position = Vector2( 35.015, -343.357 )
+
+[node name="Camera2D" type="Camera2D" parent="ExitSign/RodPlayers"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 288
+limit_bottom = 456
 
 [connection signal="both_player_reached" from="FinishZone" to="." method="_on_FinishZone_both_player_reached"]
 [connection signal="player_reached" from="FinishZone" to="." method="_on_FinishZone_player_reached"]
