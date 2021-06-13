@@ -17,6 +17,9 @@ func _ready():
 	$OnFloor.connect("enter_ground", self, "_on_enter_ground")
 
 func _integrate_forces(state: Physics2DDirectBodyState):
+	if Global.paused:
+		return
+	
 	var lv := state.get_linear_velocity()
 	var delta := state.get_step()
 	

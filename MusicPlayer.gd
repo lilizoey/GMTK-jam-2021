@@ -1,8 +1,8 @@
 extends AudioStreamPlayer
 
-const target_volume := 5
-const min_volume := -10
-const fade_speed := 15
+const target_volume := -7.5
+const min_volume := -35
+const fade_speed := 20
 
 var next_song: AudioStream
 
@@ -16,7 +16,8 @@ enum PlayingState {
 var playing_state := 0
 
 func _ready():
-	mix_target = 1
+	mix_target = 0
+	bus = "Music"
 	volume_db = target_volume
 
 func play_song(new_song: AudioStream):

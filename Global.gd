@@ -1,10 +1,11 @@
 extends Node
 
 const stage_select_scene := preload("res://UI/StageSelect.tscn")
-const stage_select_music := preload("res://Misc/theme1.ogg")
+const stage_select_music := preload("res://Misc/theme1_better.ogg")
 
 var current_stage = null
 var finished_current = false
+var paused = false
 
 enum State {
 	locked,
@@ -19,7 +20,12 @@ class StageState:
 	var name: String
 	var song: AudioStream
 	
-	func _init(_scene: PackedScene, _name: String,  _song: AudioStream, init_state: int = State.locked):
+	func _init(
+		_scene: PackedScene, 
+		_name: String,  
+		_song: AudioStream, 
+		init_state: int = State.locked
+	):
 		scene = _scene
 		state = init_state
 		name = _name
@@ -70,6 +76,10 @@ func play_stage(stage_state: StageState) -> bool:
 	return true
 
 func finished_current():
+	stages[current_stage].state = State.completed
 	var next_stage := get_next_available_stage()
 	if next_stage and next_stage.state == State.locked:
 		next_stage.state = State.unlocked
+
+func get_current_stage_state() -> StageState:
+	return stages[current_stage]

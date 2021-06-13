@@ -12,4 +12,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+align = 1
+valign = 1
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]

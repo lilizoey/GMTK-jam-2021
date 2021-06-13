@@ -30,3 +30,14 @@ func _on_character_die(character):
 	print("aaa")
 	if character.is_in_group("Player"):
 		exit_stage()
+
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if Input.is_action_just_pressed("pause"):
+			Global.paused = not Global.paused
+			if Global.paused:
+				$UI/Pause.visible = true
+				MusicPlayer.play_song(preload("res://Misc/theme2_elevator_thing_le_fun_est_present.ogg"))
+			else:
+				$UI/Pause.visible = false
+				MusicPlayer.play_song(Global.get_current_stage_state().song)
