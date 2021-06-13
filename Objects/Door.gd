@@ -20,6 +20,11 @@ func _ready():
 	for button in buttons:
 		button.connect("turned_on", self, "_on_Button_turned_on", [button])
 		button.connect("turned_off", self, "_on_Button_turned_off", [button])
+	
+	if is_open:
+		open()
+	else:
+		close()
 
 func check_or() -> bool:
 	for button in buttons:
@@ -67,11 +72,19 @@ func _on_Button_turned_off(body, button):
 		close()
 
 func open():
-	visible = false
+	$Sprite.frame = 3
+	
 	$StaticBody2D/CollisionShape2D.call_deferred("set_disabled", true)
 	is_open = true
 
 func close():
-	visible = true
+	match type:
+		Type.logical_and:
+			$Sprite.frame = 0
+		Type.logical_or:
+			$Sprite.frame = 1
+		Type.logical_xor:
+			$Sprite.frame = 2
+	
 	$StaticBody2D/CollisionShape2D.call_deferred("set_disabled", false)
 	is_open = false
