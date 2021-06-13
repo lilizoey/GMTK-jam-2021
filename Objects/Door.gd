@@ -74,4 +74,4 @@ func open():
 func close():
 	visible = true
 	$StaticBody2D/CollisionShape2D.call_deferred("set_disabled", false)
-	is_open = true
+	is_open = false
