@@ -24,7 +24,7 @@ func _integrate_forces(state: Physics2DDirectBodyState):
 	var lv := state.get_linear_velocity()
 	var delta := state.get_step()
 	
-	if lv.length() > 1.0:
+	if lv.length() > 6.0:
 		if lv.x > 0:
 			animated_sprite.animation = "WalkRight"
 		elif lv.x < 0:
@@ -78,3 +78,6 @@ func _on_left_floor():
 
 func _on_enter_ground():
 	emit_signal("enter_ground", self)
+
+func die():
+	animated_sprite.play("Fall")

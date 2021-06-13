@@ -57,6 +57,16 @@ func check_dead():
 			off_ground += 1
 	
 	if off_ground >= 2:
-		emit_signal("die", self)
+		die()
 	elif off_ground == 1 and linkage_type != LinkageType.rod:
-		emit_signal("die", self)
+		die()
+
+func die():
+	emit_signal("die", self)
+	for player in players_on_ground.keys():
+		if not players_on_ground[player]:
+			player.die()
+	
+	for child in get_children():
+		if not child.is_in_group("Player"):
+			child.visible = false
