@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const target_volume := -18.5
+const target_volume := -5
 const min_volume := -35
 const fade_speed := 20
 
@@ -21,6 +21,8 @@ func _ready():
 	volume_db = target_volume
 
 func play_song(new_song: AudioStream):
+	if new_song and stream and new_song.resource_path == stream.resource_path:
+		return
 	next_song = new_song
 	playing_state = PlayingState.fade_out
 

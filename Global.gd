@@ -44,15 +44,15 @@ var main_stages := [
 ]
 
 var stages := {
-	main_stages[0] : StageState.new(preload("res://Stages/Stage1.tscn"), main_stages[0], preload("res://Misc/theme3.ogg"), State.unlocked),
-	main_stages[1] : StageState.new(preload("res://Stages/Stage2.tscn"), main_stages[1], preload("res://Misc/theme3.ogg")),
-	main_stages[2] : StageState.new(preload("res://Stages/Stage3.tscn"), main_stages[2], preload("res://Misc/theme3.ogg")),
-	main_stages[3] : StageState.new(preload("res://Stages/Stage4.tscn"), main_stages[3], preload("res://Misc/theme3.ogg")),
-	main_stages[4] : StageState.new(preload("res://Stages/Stage5.tscn"), main_stages[4], preload("res://Misc/theme3.ogg")),
-	main_stages[5] : StageState.new(preload("res://Stages/Stage6.tscn"), main_stages[5], preload("res://Misc/theme3.ogg")),
-	main_stages[6] : StageState.new(preload("res://Stages/Stage7.tscn"), main_stages[6], preload("res://Misc/theme3.ogg")),
-	main_stages[7] : StageState.new(preload("res://Stages/Stage8.tscn"), main_stages[7], preload("res://Misc/theme3.ogg")),
-	main_stages[8] : StageState.new(preload("res://Stages/Stage9.tscn"), main_stages[8], preload("res://Misc/theme3.ogg")),
+	main_stages[0] : StageState.new(preload("res://Stages/Stage1.tscn"), main_stages[0], preload("res://Misc/theme3-v2-loop.ogg"), State.unlocked),
+	main_stages[1] : StageState.new(preload("res://Stages/Stage2.tscn"), main_stages[1], preload("res://Misc/theme3-v2-loop.ogg")),
+	main_stages[2] : StageState.new(preload("res://Stages/Stage3.tscn"), main_stages[2], preload("res://Misc/theme3-v2-loop.ogg")),
+	main_stages[3] : StageState.new(preload("res://Stages/Stage4.tscn"), main_stages[3], preload("res://Misc/theme3-v2-loop.ogg")),
+	main_stages[4] : StageState.new(preload("res://Stages/Stage5.tscn"), main_stages[4], preload("res://Misc/theme3-v2-loop.ogg")),
+	main_stages[5] : StageState.new(preload("res://Stages/Stage6.tscn"), main_stages[5], preload("res://Misc/theme3-v2-loop.ogg")),
+	main_stages[6] : StageState.new(preload("res://Stages/Stage7.tscn"), main_stages[6], preload("res://Misc/theme3-v2-loop.ogg")),
+	main_stages[7] : StageState.new(preload("res://Stages/Stage8.tscn"), main_stages[7], preload("res://Misc/theme3-v2-loop.ogg")),
+	main_stages[8] : StageState.new(preload("res://Stages/Stage9.tscn"), main_stages[8], preload("res://Misc/theme3-v2-loop.ogg")),
 }
 
 func _ready():

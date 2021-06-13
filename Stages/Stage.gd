@@ -59,3 +59,5 @@ func _unhandled_input(event):
 	if event is InputEventKey:
 		if Input.is_action_just_pressed("pause"):
 			pause()
+		if Input.is_action_just_pressed("retry"):
+			retry_level()
