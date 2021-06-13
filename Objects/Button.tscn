@@ -18,6 +18,7 @@ position = Vector2( 0, 2 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 2
+frame = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

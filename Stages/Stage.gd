@@ -1,6 +1,6 @@
 extends Node2D
 
-export var wait_for_both := false
+export var wait_for_both := true
 
 onready var stage_finished_ui := $UI/StageFinished
 

@@ -13,6 +13,12 @@ var on := false
 signal turned_on(body)
 signal turned_off(body)
 
+func _ready():
+	if on:
+		button_down(null)
+	else:
+		button_up(null)
+
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		match type:
@@ -45,9 +51,9 @@ func button_up(body):
 		Types.held:
 			$Sprite.frame = 0
 		Types.toggled:
-			$Sprite.frame = 2
-		Types.once:
 			$Sprite.frame = 4
+		Types.once:
+			$Sprite.frame = 2
 
 func button_down(body):
 	on = true
@@ -57,7 +63,7 @@ func button_down(body):
 		Types.held:
 			$Sprite.frame = 1
 		Types.toggled:
-			$Sprite.frame = 3
-		Types.once:
 			$Sprite.frame = 5
+		Types.once:
+			$Sprite.frame = 3
 

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Character/Player/PlayerOne.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Character/Player/PlayerTwo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Character/Links/connection_sprites.png" type="Texture" id=3]
+[ext_resource path="res://Character/Player/Players.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36, 3 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 2
+atlas = ExtResource( 3 )
+region = Rect2( 24, 18, 72, 6 )
+
+[node name="RodPlayers" type="Node2D" groups=[
+"Player",
+]]
+script = ExtResource( 4 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D"]
+texture = SubResource( 2 )
+
+[node name="PlayerOne" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -36 )
+other_path = NodePath("../PlayerTwo")
+
+[node name="PlayerTwo" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 36 )
+other_path = NodePath("../PlayerOne")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( 0, -36 )
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../PlayerOne")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2( 0, 36 )
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../PlayerTwo")
