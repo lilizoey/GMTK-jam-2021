@@ -14,7 +14,7 @@ onready var player_1 := $PlayerOne
 onready var player_2 := $PlayerTwo
 onready var camera2d := get_node_or_null("Camera2D")
 
-onready var players_on_ground := {player_1: false, player_2: false}
+onready var players_on_ground := {player_1: true, player_2: true}
 
 onready var initial_pos: Vector2 = player_1.global_position
 var initialized := false
