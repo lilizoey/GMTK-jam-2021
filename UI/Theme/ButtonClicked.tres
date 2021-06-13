@@ -1,0 +1,16 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=2]
+
+[ext_resource path="res://UI/Theme/buttons.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+
+[resource]
+texture = SubResource( 1 )
+region_rect = Rect2( 1, 1, 70, 70 )
+margin_left = 7.0
+margin_right = 9.0
+margin_top = 9.0
+margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
