@@ -111,7 +111,6 @@ shape = SubResource( 2 )
 position = Vector2( 0, -18 )
 frames = SubResource( 17 )
 animation = "IdleRight"
-frame = 1
 playing = true
 
 [node name="OnFloor" type="Area2D" parent="."]

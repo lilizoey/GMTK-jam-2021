@@ -13,7 +13,7 @@ func _ready():
 
 func _process(delta):
 	var player_len := (player_1.position - player_2.position).length()
-	region_rect.size.x = player_len
-	offset.x = player_len / 2
-	position = player_1.position
+	scale.x = player_len / 72.0
+	position.x = (player_1.position.x + player_2.position.x) / 2.0
+	position.y = (player_1.position.y + player_2.position.y) / 2.0
 	rotation = Vector2.RIGHT.angle_to(player_2.position - player_1.position)

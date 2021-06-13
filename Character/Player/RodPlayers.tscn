@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Character/Player/PlayerOne.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Character/Player/PlayerTwo.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Character/Links/connection_sprites.png" type="Texture" id=3]
 [ext_resource path="res://Character/Player/Players.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36, 3 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 2
+atlas = ExtResource( 3 )
+region = Rect2( 24, 18, 72, 6 )
 
 [node name="RodPlayers" type="Node2D" groups=[
 "Player",
@@ -19,8 +24,7 @@ script = ExtResource( 4 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="RigidBody2D"]
-scale = Vector2( 1.125, 0.094 )
-texture = ExtResource( 3 )
+texture = SubResource( 2 )
 
 [node name="PlayerOne" parent="." instance=ExtResource( 1 )]
 position = Vector2( -36, 0 )
