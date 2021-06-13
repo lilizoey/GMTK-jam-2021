@@ -40,6 +40,7 @@ func try_swap():
 	if not (active_pads[$Slot1] and active_pads[$Slot2]):
 		return
 	
+	$AudioStreamPlayer2D.play()
 	var assembly: Node2D = active_pads[$Slot1].get_parent()
 	assembly.get_parent().remove_child(assembly)
 	
