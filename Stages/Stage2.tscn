@@ -10,7 +10,7 @@
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Terrain/FloorTiles.tres" type="TileSet" id=9]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29, 14 )
 
 [node name="TemplateStage" type="Node2D"]
@@ -38,7 +38,7 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishZone"]
 position = Vector2( -1, 48 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Terrain/WallTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Misc/FinishZone.gd" type="Script" id=3]
+[ext_resource path="res://Stages/Stage.gd" type="Script" id=4]
+[ext_resource path="res://UI/StageFinished.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Pause.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Terrain/FloorTiles.tres" type="TileSet" id=7]
+[ext_resource path="res://Objects/Button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Character/Player/VSpringPlayers.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 36 )
+
+[node name="TemplateStage" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Floor" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 24, 24 )
+collision_layer = 16
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65537, 1, 8, 65538, 1, 10, 65539, 1, 10, 65540, 1, 10, 65541, 1, 10, 65542, 1, 10, 65543, 1, 10, 65544, 1, 10, 65545, 1, 10, 65546, 1, 10, 65547, 1, 10, 65548, 1, 10, 65549, 1, 10, 65550, 1, 10, 65551, 1, 10, 65552, 1, 10, 65553, 1, 10, 65554, 1, 11, 131073, 1, 65544, 131074, 1, 131081, 131075, 1, 131081, 131076, 1, 131081, 131077, 1, 131081, 131078, 1, 131081, 131079, 1, 131081, 131080, 1, 131081, 131081, 1, 131081, 131082, 1, 131081, 131083, 1, 131081, 131084, 1, 131081, 131085, 1, 131081, 131086, 1, 131081, 131087, 1, 131081, 131088, 1, 131081, 131089, 1, 131081, 131090, 1, 131083, 196609, 1, 65544, 196610, 1, 131081, 196611, 1, 131081, 196612, 1, 131081, 196613, 1, 131081, 196614, 1, 131081, 196615, 1, 131081, 196616, 1, 131081, 196617, 1, 131081, 196618, 1, 131081, 196619, 1, 131081, 196620, 1, 131081, 196621, 1, 131081, 196622, 1, 131081, 196623, 1, 131081, 196624, 1, 131081, 196625, 1, 131081, 196626, 1, 131083, 262145, 1, 65544, 262146, 1, 131081, 262147, 1, 131081, 262148, 1, 131081, 262149, 1, 131081, 262150, 1, 131081, 262151, 1, 131081, 262152, 1, 131081, 262153, 1, 131081, 262154, 1, 131081, 262155, 1, 131081, 262156, 1, 131081, 262157, 1, 131081, 262158, 1, 131081, 262159, 1, 131081, 262160, 1, 131081, 262161, 1, 131081, 262162, 1, 131083, 327681, 1, 65544, 327682, 1, 131081, 327683, 1, 131081, 327684, 1, 131081, 327685, 1, 131081, 327686, 1, 131081, 327687, 1, 131081, 327688, 1, 131081, 327689, 1, 131081, 327690, 1, 131081, 327691, 1, 131081, 327692, 1, 131081, 327693, 1, 131081, 327694, 1, 131081, 327695, 1, 131081, 327696, 1, 131081, 327697, 1, 131081, 327698, 1, 131083, 393217, 1, 65544, 393218, 1, 131081, 393219, 1, 131081, 393220, 1, 131081, 393221, 1, 131081, 393222, 1, 131081, 393223, 1, 131081, 393224, 1, 131081, 393225, 1, 131081, 393226, 1, 131081, 393227, 1, 131081, 393228, 1, 131081, 393229, 1, 131081, 393230, 1, 131081, 393231, 1, 131081, 393232, 1, 131081, 393233, 1, 131081, 393234, 1, 131083, 458753, 1, 65544, 458754, 1, 131081, 458755, 1, 131081, 458756, 1, 131081, 458757, 1, 131081, 458758, 1, 131081, 458759, 1, 131081, 458760, 1, 131081, 458761, 1, 131081, 458762, 1, 131081, 458763, 1, 131081, 458764, 1, 131081, 458765, 1, 131081, 458766, 1, 131081, 458767, 1, 131081, 458768, 1, 131081, 458769, 1, 131081, 458770, 1, 131083, 524289, 1, 65544, 524290, 1, 131081, 524291, 1, 131081, 524292, 1, 131081, 524293, 1, 131081, 524294, 1, 131081, 524295, 1, 131081, 524296, 1, 131081, 524297, 1, 131081, 524298, 1, 131081, 524299, 1, 131081, 524300, 1, 131081, 524301, 1, 131081, 524302, 1, 131081, 524303, 1, 131081, 524304, 1, 131081, 524305, 1, 131081, 524306, 1, 131083, 589825, 1, 65544, 589826, 1, 131081, 589827, 1, 131081, 589828, 1, 131081, 589829, 1, 131081, 589830, 1, 131081, 589831, 1, 131081, 589832, 1, 131081, 589833, 1, 131081, 589834, 1, 131081, 589835, 1, 131081, 589836, 1, 131081, 589837, 1, 131081, 589838, 1, 131081, 589839, 1, 131081, 589840, 1, 131081, 589841, 1, 131081, 589842, 1, 131083, 655361, 1, 65544, 655362, 1, 131081, 655363, 1, 131081, 655364, 1, 131081, 655365, 1, 131081, 655366, 1, 131081, 655367, 1, 131081, 655368, 1, 131078, 655369, 1, 196617, 655370, 1, 196618, 655371, 1, 196617, 655372, 1, 131077, 655373, 1, 131081, 655374, 1, 131081, 655375, 1, 131081, 655376, 1, 131081, 655377, 1, 131081, 655378, 1, 131083, 720897, 1, 65544, 720898, 1, 131081, 720899, 1, 131081, 720900, 1, 131081, 720901, 1, 131081, 720902, 1, 131081, 720903, 1, 131081, 720904, 1, 131083, 720906, 1, 65536, 720908, 1, 65544, 720909, 1, 131081, 720910, 1, 131081, 720911, 1, 131081, 720912, 1, 131081, 720913, 1, 131081, 720914, 1, 131083, 786433, 1, 196616, 786434, 1, 196617, 786435, 1, 196617, 786436, 1, 196617, 786437, 1, 196617, 786438, 1, 196617, 786439, 1, 196617, 786440, 1, 196619, 786442, 1, 65536, 786444, 1, 196616, 786445, 1, 196617, 786446, 1, 196617, 786447, 1, 196617, 786448, 1, 196617, 786449, 1, 196617, 786450, 1, 196619, 851978, 1, 65536, 917513, 1, 8, 917514, 1, 9, 917515, 1, 11, 983049, 1, 65544, 983050, 1, 131081, 983051, 1, 131083, 1048585, 1, 65544, 1048586, 1, 131081, 1048587, 1, 131083, 1114121, 1, 65544, 1114122, 1, 131081, 1114123, 1, 131083, 1179657, 1, 196616, 1179658, 1, 196617, 1179659, 1, 196619 )
+
+[node name="Button" parent="Floor" instance=ExtResource( 8 )]
+position = Vector2( 132, 84 )
+type = 0
+
+[node name="Button2" parent="Floor" instance=ExtResource( 8 )]
+position = Vector2( 132, 108 )
+type = 0
+
+[node name="Button3" parent="Floor" instance=ExtResource( 8 )]
+position = Vector2( 180, 84 )
+type = 0
+
+[node name="Button4" parent="Floor" instance=ExtResource( 8 )]
+position = Vector2( 180, 108 )
+type = 0
+
+[node name="Button5" parent="Floor" instance=ExtResource( 8 )]
+position = Vector2( 228, 84 )
+type = 0
+
+[node name="Button6" parent="Floor" instance=ExtResource( 8 )]
+position = Vector2( 228, 108 )
+type = 0
+
+[node name="Button7" parent="Floor" instance=ExtResource( 8 )]
+position = Vector2( 252, 36 )
+type = 2
+
+[node name="Walls" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 24, 24 )
+collision_layer = 2
+collision_mask = 7
+format = 1
+tile_data = PoolIntArray( 0, 1, 1, 1, 1, 196610, 2, 1, 196610, 3, 1, 196610, 4, 1, 196610, 5, 1, 196610, 6, 1, 196610, 7, 1, 196610, 8, 1, 196610, 9, 1, 196610, 10, 1, 196610, 11, 1, 3, 13, 1, 196609, 14, 1, 196610, 15, 1, 196610, 16, 1, 196610, 17, 1, 196610, 18, 1, 196610, 19, 1, 3, 65536, 1, 65536, 65547, 1, 65536, 65555, 1, 65536, 131072, 1, 65536, 131076, 1, 196609, 131077, 1, 196610, 131078, 1, 196610, 131079, 1, 196610, 131080, 1, 196610, 131081, 1, 196610, 131082, 1, 196610, 131083, 1, 65539, 131085, 1, 196609, 131086, 1, 196610, 131087, 1, 196610, 131088, 1, 196610, 131089, 1, 196610, 131090, 1, 196610, 131091, 1, 65539, 196608, 1, 65536, 196619, 1, 65536, 196627, 1, 65536, 262144, 1, 65536, 262155, 1, 65536, 262163, 1, 65536, 327680, 1, 65536, 327684, 1, 196609, 327685, 1, 196610, 327686, 1, 196610, 327687, 1, 196610, 327688, 1, 196610, 327689, 1, 196610, 327690, 1, 196610, 327691, 1, 131074, 327692, 1, 196610, 327693, 1, 196610, 327694, 1, 196610, 327695, 1, 196610, 327696, 1, 196610, 327697, 1, 196610, 327698, 1, 196610, 327699, 1, 65539, 393216, 1, 65536, 393235, 1, 65536, 458752, 1, 65536, 458771, 1, 65536, 524288, 1, 65537, 524289, 1, 196610, 524290, 1, 196610, 524291, 1, 196610, 524292, 1, 196610, 524293, 1, 196610, 524294, 1, 196610, 524295, 1, 196610, 524296, 1, 196610, 524297, 1, 196610, 524298, 1, 196610, 524299, 1, 196610, 524300, 1, 196610, 524301, 1, 196610, 524302, 1, 196610, 524303, 1, 196610, 524304, 1, 196610, 524305, 1, 196610, 524306, 1, 196610, 524307, 1, 65539, 589824, 1, 65536, 589843, 1, 65536, 655360, 1, 65536, 655379, 1, 65536, 720896, 1, 65536, 720905, 1, 0, 720907, 1, 0, 720915, 1, 65536, 786432, 1, 65536, 786441, 1, 65536, 786443, 1, 65536, 786451, 1, 65536, 851968, 1, 131073, 851969, 1, 196610, 851970, 1, 196610, 851971, 1, 196610, 851972, 1, 196610, 851973, 1, 196610, 851974, 1, 196610, 851975, 1, 196610, 851976, 1, 2, 851977, 1, 131075, 851979, 1, 131073, 851980, 1, 2, 851981, 1, 196610, 851982, 1, 196610, 851983, 1, 196610, 851984, 1, 196610, 851985, 1, 196610, 851986, 1, 196610, 851987, 1, 131075, 917512, 1, 65536, 917516, 1, 65536, 983048, 1, 65536, 983052, 1, 65536, 1048584, 1, 65536, 1048588, 1, 65536, 1114120, 1, 65536, 1114124, 1, 65536, 1179656, 1, 131072, 1179660, 1, 131072 )
+
+[node name="Door" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 156, 36 )
+type = 2
+button_paths = [ NodePath("../../Floor/Button2"), NodePath("../../Floor/Button4"), NodePath("../../Floor/Button3") ]
+
+[node name="Door3" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 132, 156 )
+button_paths = [ NodePath("../../Floor/Button7") ]
+
+[node name="Door4" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 132, 180 )
+button_paths = [ NodePath("../../Floor/Button7") ]
+
+[node name="Door7" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 108, 84 )
+inverted = true
+button_paths = [ NodePath("../../Floor/Button"), NodePath("../../Floor/Button2"), NodePath("../../Floor/Button3"), NodePath("../../Floor/Button4"), NodePath("../../Floor/Button5"), NodePath("../../Floor/Button6") ]
+
+[node name="Door8" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 108, 108 )
+inverted = true
+button_paths = [ NodePath("../../Floor/Button"), NodePath("../../Floor/Button2"), NodePath("../../Floor/Button3"), NodePath("../../Floor/Button4"), NodePath("../../Floor/Button5"), NodePath("../../Floor/Button6") ]
+
+[node name="Door5" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 108, 36 )
+type = 2
+button_paths = [ NodePath("../../Floor/Button5"), NodePath("../../Floor/Button2"), NodePath("../../Floor/Button6") ]
+
+[node name="Door6" parent="Walls" instance=ExtResource( 1 )]
+position = Vector2( 204, 36 )
+type = 2
+button_paths = [ NodePath("../../Floor/Button"), NodePath("../../Floor/Button3"), NodePath("../../Floor/Button6") ]
+
+[node name="FinishZone" type="Area2D" parent="."]
+position = Vector2( 253, 204 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishZone"]
+position = Vector2( 71, -36 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 76, 37 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 288
+limit_bottom = 216
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StageFinished" parent="UI" instance=ExtResource( 5 )]
+visible = false
+
+[node name="Pause" parent="UI" instance=ExtResource( 6 )]
+visible = false
+
+[node name="SpringPlayers" parent="." instance=ExtResource( 9 )]
+position = Vector2( 36, 84 )
+
+[connection signal="both_player_reached" from="FinishZone" to="." method="_on_FinishZone_both_player_reached"]
+[connection signal="player_reached" from="FinishZone" to="." method="_on_FinishZone_player_reached"]
+[connection signal="next_level" from="UI/StageFinished" to="." method="next_level"]
+[connection signal="return_to_level_select" from="UI/StageFinished" to="." method="exit_stage"]

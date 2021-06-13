@@ -8,7 +8,7 @@
 friction = 0.2
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 11.5
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
@@ -115,7 +115,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=23]
-radius = 11.0
+radius = 7.5
 
 [node name="PlayerTwo" type="RigidBody2D" groups=[
 "Player",
@@ -136,6 +136,7 @@ shape = SubResource( 2 )
 position = Vector2( 0, -18 )
 frames = SubResource( 22 )
 animation = "IdleRight"
+frame = 2
 playing = true
 
 [node name="OnFloor" type="Area2D" parent="."]

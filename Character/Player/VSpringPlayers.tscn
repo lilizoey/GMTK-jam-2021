@@ -34,7 +34,8 @@ position = Vector2( 0, 36 )
 other_path = NodePath("../PlayerOne")
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
-position = Vector2( 0, -36 )
+position = Vector2( 0, 36 )
+rotation = 3.14159
 node_a = NodePath("../PlayerTwo")
 node_b = NodePath("../PlayerOne")
 bias = 0.5

@@ -6,7 +6,8 @@ enum Type {
 	logical_xor
 }
 
-export var is_open := false
+export var inverted := false
+onready var is_open := inverted
 export(Type) var type 
 export(Array, NodePath) var button_paths
 var buttons := []
@@ -43,32 +44,36 @@ func check_xor() -> bool:
 	for button in buttons:
 		if button.on:
 			trues += 1
-	return trues % 2 == 1
-
+	print(trues)
+	return (trues % 2) == 0
 
 func _on_Button_turned_on(body, button):
-	var do_open = false
-	match type:
-		Type.logical_and:
-			do_open = check_and()
-		Type.logical_or:
-			do_open = check_or()
-		Type.logical_xor:
-			do_open = check_xor()
-	
-	if do_open and not is_open:
-		open()
+	update_state()
 
 func _on_Button_turned_off(body, button):
-	var do_close = false
+	update_state()
+
+func check_open() -> bool:
+	var b := false
 	match type:
 		Type.logical_and:
-			do_close = not check_and()
+			b = check_and()
 		Type.logical_or:
-			do_close = not check_or()
+			b = check_or()
 		Type.logical_xor:
-			do_close = not check_xor()
-	if do_close and is_open:
+			b = check_xor()
+	
+	if inverted:
+		return not b
+	else:
+		return b
+
+func update_state():
+	var desired_state := check_open()
+	
+	if desired_state and not is_open:
+		open()
+	elif not desired_state and is_open:
 		close()
 
 func open():

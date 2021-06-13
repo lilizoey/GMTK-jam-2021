@@ -39,6 +39,8 @@ var main_stages := [
 	"stage_5",
 	"stage_6",
 	"stage_7",
+	"stage_8",
+	"stage_9",
 ]
 
 var stages := {
@@ -49,6 +51,8 @@ var stages := {
 	main_stages[4] : StageState.new(preload("res://Stages/Stage5.tscn"), main_stages[4], preload("res://Misc/theme3.ogg")),
 	main_stages[5] : StageState.new(preload("res://Stages/Stage6.tscn"), main_stages[5], preload("res://Misc/theme3.ogg")),
 	main_stages[6] : StageState.new(preload("res://Stages/Stage7.tscn"), main_stages[6], preload("res://Misc/theme3.ogg")),
+	main_stages[7] : StageState.new(preload("res://Stages/Stage8.tscn"), main_stages[7], preload("res://Misc/theme3.ogg")),
+	main_stages[8] : StageState.new(preload("res://Stages/Stage9.tscn"), main_stages[8], preload("res://Misc/theme3.ogg")),
 }
 
 func _ready():
